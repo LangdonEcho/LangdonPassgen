@@ -22,7 +22,7 @@ function generatePass(){
  //added minimum and maximum length of password characters required
  
  if(Totlength <8 || Totlength > 128){
-    alert("Please choose a number between 8 and 128 characters\nTry again.");
+    alert("Please choose a number between 8 and 128 characters.");
 }
 
 //else if statements
@@ -48,3 +48,17 @@ else{
     if(allChars.length===0){
        alert("You need choose at least 1 type of character to generate a password!\nTry again");
     }
+
+    else{
+        for(var i=0; i<Totlength; i++){
+               var random = Math.floor(Math.random()*allChars.length);
+               resultPass += allChars[random];
+              }
+          }
+          }
+       
+          //Display password
+       
+          document.getElementById("password").innerHTML = resultPass;
+        }
+       

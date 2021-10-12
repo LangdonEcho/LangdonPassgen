@@ -1,1 +1,2 @@
 # LangdonPassgen
+The purpose of this application is to give users the ability to create their own unique individual password that will be different each time that can be customized but their own wants in terms of character and numbers and other password options at the push  of a few clicks. ![Screenshot (12)](https://user-images.githubusercontent.com/86031485/136876415-572fca62-fc31-42a3-b370-e71a813396ec.png)

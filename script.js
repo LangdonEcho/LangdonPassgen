@@ -20,3 +20,31 @@ function generatePass(){
  var Totlength = prompt("How many characters would you like your password to be?");
 
  //added minimum and maximum length of password characters required
+ 
+ if(Totlength <8 || Totlength > 128){
+    alert("Please choose a number between 8 and 128 characters\nTry again.");
+}
+
+//else if statements
+
+else{
+
+    if(confirm("Do you want to include upper case letters?")){
+       Array.prototype.push.apply(allChars, abcUpperArr);
+    }
+
+    if(confirm("Do you want to include lower case letters?")){
+       Array.prototype.push.apply(allChars, abcLowerArr);
+    }
+
+    if(confirm("Do you want to include numbers?")){
+       Array.prototype.push.apply(allChars, numArr);
+    }
+
+    if(confirm("Do you want to include symbols?")){
+       Array.prototype.push.apply(allChars, symArr);
+    }
+
+    if(allChars.length===0){
+       alert("You need choose at least 1 type of character to generate a password!\nTry again");
+    }

@@ -61,4 +61,11 @@ else{
        
           document.getElementById("password").innerHTML = resultPass;
         }
-       
+        
+        // Bonus section
+
+function copyPass(){   
+    document.querySelector("textarea").select();
+        document.execCommand("Copy");
+        alert("Password copied to clipboard!");
+    }

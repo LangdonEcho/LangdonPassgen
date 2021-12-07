@@ -1,12 +1,12 @@
 // Variables separating into strings to add to array  
-var abcUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var abcUpperArr = abcUpper.split("");
-var abcLower = "abcdefghijklmnopqrstuvwxyz";
-var abcLowerArr = abcLower.split("");
-var num = "0123456789";
-var numArr = num.split("");
-var sym = "!#$%&\()*+,-./:;<=>?@^[\\]^_`{|}~";
-var symArr = sym.split("");
+var abcUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var abcUpperArray = abcUpper;
+var abcLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var abcLowerArray = abcLower;
+var num = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var numberArray = num;
+var symbol = ["!","#", "$", "%", "&", "*", "+", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "^", "_", "`", "|", "~",];
+var symbolArray = symbol;
 
 // Initial window prompt
 window.onload = alert("Please click Generate password to start");
@@ -30,34 +30,34 @@ function generatePass(){
 else{
 
     if(confirm("Do you want to include upper case letters?")){
-       Array.prototype.push.apply(allChars, abcUpperArr);
+       Array.prototype.push.apply(allChars, abcUpperArray);
     }
 
     if(confirm("Do you want to include lower case letters?")){
-       Array.prototype.push.apply(allChars, abcLowerArr);
+       Array.prototype.push.apply(allChars, abcLowerArray);
     }
 
     if(confirm("Do you want to include numbers?")){
-       Array.prototype.push.apply(allChars, numArr);
+       Array.prototype.push.apply(allChars, numberArray);
     }
 
     if(confirm("Do you want to include symbols?")){
-       Array.prototype.push.apply(allChars, symArr);
+       Array.prototype.push.apply(allChars, symbolArray);
     }
 
     if(allChars.length===0){
        alert("You need choose at least 1 type of character to generate a password!\nTry again");
     }
-
-    else{
-        for(var i=0; i<Totlength; i++){
-               var random = Math.floor(Math.random()*allChars.length);
-               resultPass += allChars[random];
-              }
-          }
-          }
+    var randomPass= ""
+      
+    for (var i = 0; i < Totlength; i++) {
+      randomPass = randomPass[Math.floor(Math.random() * allChars.length)];
+      console.log(randomPass)
+    }
+    return randomPass;
+}
        
-          //Display password
+          //Display password using password id tag in html
        
           document.getElementById("password").innerHTML = resultPass;
         }

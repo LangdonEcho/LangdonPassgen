@@ -48,13 +48,11 @@ else{
     if(allChars.length===0){
        alert("You need choose at least 1 type of character to generate a password!\nTry again");
     }
-    var randomPass= ""
-      
+      var random
     for (var i = 0; i < Totlength; i++) {
-      randomPass = randomPass[Math.floor(Math.random() * allChars.length)];
-      console.log(randomPass)
+      random = random[Math.floor(Math.random() * allChars.length)];
+      resultPass += allChars[random];
     }
-    return randomPass;
 }
        
           //Display password using password id tag in html
